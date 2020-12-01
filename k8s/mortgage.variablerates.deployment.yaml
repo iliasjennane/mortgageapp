@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mortgage-variablerates
+spec:
+  selector:
+    matchLabels:
+      app: mortgage-variablerates
+  template:
+    metadata:
+      labels:
+        app: mortgage-variablerates
+    spec:
+      containers:
+      - name: mortgage-variablerates
+        image: mortgage.variablerates:latest
+        imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - name: http
+          containerPort: 80
+        - name: https
+          containerPort: 443
+        

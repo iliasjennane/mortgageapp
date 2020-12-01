@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mortgagevariablerates
+spec:
+  selector:
+    matchLabels:
+      app: mortgagevariablerates
+  template:
+    metadata:
+      labels:
+        app: mortgagevariablerates
+    spec:
+      containers:
+      - name: mortgagevariablerates
+        image: iliasjmortgageappcr.azurecr.io/mortgagevariablerates:latest
+        imagePullPolicy: Always
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80

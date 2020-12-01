@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mortgagefixedrates
+spec:
+  selector:
+    matchLabels:
+      app: mortgagefixedrates
+  template:
+    metadata:
+      labels:
+        app: mortgagefixedrates
+    spec:
+      containers:
+      - name: mortgagefixedrates
+        image: iliasjmortgageappcr.azurecr.io/mortgagefixedrates:latest
+        imagePullPolicy: Always
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80

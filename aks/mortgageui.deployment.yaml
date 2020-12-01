@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mortgageui
+spec:
+  selector:
+    matchLabels:
+      app: mortgageui
+  template:
+    metadata:
+      labels:
+        app: mortgageui
+    spec:
+      containers:
+      - name: mortgageui
+        image: iliasjmortgageappcr.azurecr.io/mortgageui:latest
+        imagePullPolicy: Always
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80

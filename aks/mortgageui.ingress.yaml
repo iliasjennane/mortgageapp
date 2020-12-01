@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: mortgageui-ingress
+spec:
+  tls:
+  - hosts:
+    - ui.mortgage.iliasjennane.com
+    secretName: letsencrypt-staging
+  rules:
+  - host: ui.mortgage.iliasjennane.com
+    http:
+      paths:
+      - backend:
+          serviceName: mortgageui
+          servicePort: 80

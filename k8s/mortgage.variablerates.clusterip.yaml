@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mortgage-variablerates
+  labels:
+    app: mortgage-variablerates
+spec:
+  type: ClusterIP
+  selector:
+    app: mortgage-variablerates
+  ports:
+  - name: http
+    port: 80
+    targetPort: 80
+    protocol: TCP
+  - name: https
+    port: 443
+    targetPort: 443
+    protocol: TCP

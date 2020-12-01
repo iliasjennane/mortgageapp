@@ -1,0 +1,69 @@
+@page "/mortagerates"
+<h1>Mortage Rates</h1>
+
+<p>Average Rate: @averageRate</p>
+
+<table>
+    <tr>
+        <td><label for="firstname">Firstname :</label></td>
+        <td><input type="text" id="firstname" name="firstname" required minlength="4" maxlength="50" size="10"> </td>
+    </tr>
+    <tr>
+        <td><label for="lastname">Lastname :</label></td>
+        <td><input type="text" id="lastname" name="lastname" required minlength="4" maxlength="50" size="10"> </td>
+    </tr>
+    <tr>
+        <td><label for="dateofbirth">Date of birth :</label></td>
+        <td><input type="date" id="dateofbirth" name="dateofbirth" required minlength="4" maxlength="50" size="10">
+        </td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <td><label for="fixedFifteenYearsLoanRate">15 Years - Fixed</label></td>
+        <td><label for="fixedThirtyYearsLoanRate">30 Years - Fixed</label></td>
+        <td><label for="variableFifteenYearsLoanRate">15 Years - Variable</label></td>
+        <td><label for="variableThirthyYearsLoanRate">30 Years - Variable</label></td>
+    </tr>
+    <tr>
+        <td> <label id="fixedFifteenYearsLoanRate">@fixedFifteenYearsLoanRate%</label> </td>
+        <td> <label id="fixedThirtyYearsLoanRate">@fixedThirtyYearsLoanRate%</label> </td>
+        <td><label id="variableFifteenYearsLoanRate">@variableFifteenYearsLoanRate%</label> </td>
+        <td><label id="variableThirthyYearsLoanRate">@variableThirthyYearsLoanRate%</label> </td>
+    </tr>
+</table>
+
+<button class="btn btn-primary" @onclick="GetRates">Get Rates</button>
+
+
+@code {
+    private static double averageRate = 3.5;
+    private static double fixedFifteenYearsLoanRate = 3.0;
+    private static double fixedThirtyYearsLoanRate = 3.7;
+    private static double variableFifteenYearsLoanRate = 2.5;
+    private static double variableThirthyYearsLoanRate = 3.1;
+
+    private void GetRates()
+    {
+        Parallel.Invoke(getFixedRates);
+        Parallel.Invoke(getVariableRates);
+        Parallel.Invoke(getAverageRate);
+    }
+
+    static void getFixedRates()
+    {
+        fixedFifteenYearsLoanRate = fixedFifteenYearsLoanRate + 0.1;
+        fixedThirtyYearsLoanRate = fixedThirtyYearsLoanRate + 0.1;
+    }
+    static void getVariableRates()
+    {
+        variableFifteenYearsLoanRate = variableFifteenYearsLoanRate + 0.1;
+        variableThirthyYearsLoanRate = variableThirthyYearsLoanRate + 0.1;
+        
+    }
+    static void getAverageRate()
+    {
+        averageRate = averageRate + 0.1;
+    }
+}

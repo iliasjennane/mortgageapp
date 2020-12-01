@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mortgage-ui
+spec:
+  selector:
+    matchLabels:
+      app: mortgage-ui
+  template:
+    metadata:
+      labels:
+        app: mortgage-ui
+    spec:
+      containers:
+      - name: mortgage-ui
+        image: mortgage.ui:latest
+        imagePullPolicy: IfNotPresent
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 80
