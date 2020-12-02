@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: mortgageui-ingress
+  name: {{ .Release.Name }}-{{ .Chart.Name }}-ingress
 spec:
   tls:
   - hosts:
@@ -12,5 +12,5 @@ spec:
     http:
       paths:
       - backend:
-          serviceName: mortgageui
+          serviceName: {{ .Release.Name }}-{{ .Chart.Name }}
           servicePort: 80

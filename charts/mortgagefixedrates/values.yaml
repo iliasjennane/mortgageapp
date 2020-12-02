@@ -1,0 +1,4 @@
+replicaCount: 1
+image:
+  repository: "iliasjmortgageappcr.azurecr.io/mortgagefixedrates"
+  tag: "latest"
