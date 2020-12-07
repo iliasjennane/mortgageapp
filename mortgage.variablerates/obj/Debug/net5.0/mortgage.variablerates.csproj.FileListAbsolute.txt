@@ -1,3 +1,10 @@
+C:\Users\iliasj\repos\MortgageApp\mortgage.variablerates\obj\Debug\net5.0\mortgage.variablerates.csprojAssemblyReference.cache
+C:\Users\iliasj\repos\MortgageApp\mortgage.variablerates\obj\Debug\net5.0\mortgage.variablerates.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\iliasj\repos\MortgageApp\mortgage.variablerates\obj\Debug\net5.0\mortgage.variablerates.AssemblyInfoInputs.cache
+C:\Users\iliasj\repos\MortgageApp\mortgage.variablerates\obj\Debug\net5.0\mortgage.variablerates.AssemblyInfo.cs
+C:\Users\iliasj\repos\MortgageApp\mortgage.variablerates\obj\Debug\net5.0\mortgage.variablerates.csproj.CoreCompileInputs.cache
+C:\Users\iliasj\repos\MortgageApp\mortgage.variablerates\obj\Debug\net5.0\mortgage.variablerates.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\iliasj\repos\MortgageApp\mortgage.variablerates\obj\Debug\net5.0\mortgage.variablerates.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\iliasj\repos\MortgageApp\mortgage.variablerates\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\iliasj\repos\MortgageApp\mortgage.variablerates\bin\Debug\net5.0\appsettings.json
 C:\Users\iliasj\repos\MortgageApp\mortgage.variablerates\bin\Debug\net5.0\mortgage.variablerates.exe
@@ -9,6 +16,7 @@ C:\Users\iliasj\repos\MortgageApp\mortgage.variablerates\bin\Debug\net5.0\ref\mo
 C:\Users\iliasj\repos\MortgageApp\mortgage.variablerates\bin\Debug\net5.0\mortgage.variablerates.pdb
 C:\Users\iliasj\repos\MortgageApp\mortgage.variablerates\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\iliasj\repos\MortgageApp\mortgage.variablerates\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+C:\Users\iliasj\repos\MortgageApp\mortgage.variablerates\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Versioning.dll
 C:\Users\iliasj\repos\MortgageApp\mortgage.variablerates\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
 C:\Users\iliasj\repos\MortgageApp\mortgage.variablerates\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
 C:\Users\iliasj\repos\MortgageApp\mortgage.variablerates\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
@@ -19,13 +27,6 @@ C:\Users\iliasj\repos\MortgageApp\mortgage.variablerates\bin\Debug\net5.0\Swashb
 C:\Users\iliasj\repos\MortgageApp\mortgage.variablerates\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\iliasj\repos\MortgageApp\mortgage.variablerates\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\Users\iliasj\repos\MortgageApp\mortgage.variablerates\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
-C:\Users\iliasj\repos\MortgageApp\mortgage.variablerates\obj\Debug\net5.0\mortgage.variablerates.csprojAssemblyReference.cache
-C:\Users\iliasj\repos\MortgageApp\mortgage.variablerates\obj\Debug\net5.0\mortgage.variablerates.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\iliasj\repos\MortgageApp\mortgage.variablerates\obj\Debug\net5.0\mortgage.variablerates.AssemblyInfoInputs.cache
-C:\Users\iliasj\repos\MortgageApp\mortgage.variablerates\obj\Debug\net5.0\mortgage.variablerates.AssemblyInfo.cs
-C:\Users\iliasj\repos\MortgageApp\mortgage.variablerates\obj\Debug\net5.0\mortgage.variablerates.csproj.CoreCompileInputs.cache
-C:\Users\iliasj\repos\MortgageApp\mortgage.variablerates\obj\Debug\net5.0\mortgage.variablerates.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\iliasj\repos\MortgageApp\mortgage.variablerates\obj\Debug\net5.0\mortgage.variablerates.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\iliasj\repos\MortgageApp\mortgage.variablerates\obj\Debug\net5.0\staticwebassets\mortgage.variablerates.StaticWebAssets.Manifest.cache
 C:\Users\iliasj\repos\MortgageApp\mortgage.variablerates\obj\Debug\net5.0\staticwebassets\mortgage.variablerates.StaticWebAssets.xml
 C:\Users\iliasj\repos\MortgageApp\mortgage.variablerates\obj\Debug\net5.0\scopedcss\bundle\mortgage.variablerates.styles.css

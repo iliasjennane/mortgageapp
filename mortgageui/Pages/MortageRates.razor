@@ -1,7 +1,14 @@
 @page "/mortagerates"
+@using System.Net.Http.Headers
+@using System.Text.Json
+@using System.Text
+@using mortgage.mortgageui.Models
+@inject HttpClient _httpClient
+
 <h1>Mortage Rates</h1>
 
 <p>Average Rate: @averageRate</p>
+<p>Average Rate: @averageRateMessage</p>
 
 <table>
     <tr>
@@ -38,32 +45,53 @@
 
 
 @code {
-    private static double averageRate = 3.5;
-    private static double fixedFifteenYearsLoanRate = 3.0;
-    private static double fixedThirtyYearsLoanRate = 3.7;
-    private static double variableFifteenYearsLoanRate = 2.5;
-    private static double variableThirthyYearsLoanRate = 3.1;
+    private  double averageRate = 3.5;
+    private  string averageRateMessage = "";
+    private  double fixedFifteenYearsLoanRate = 3.0;
+    private  double fixedThirtyYearsLoanRate = 3.7;
+    private  double variableFifteenYearsLoanRate = 2.5;
+    private  double variableThirthyYearsLoanRate = 3.1;
 
     private void GetRates()
     {
         Parallel.Invoke(getFixedRates);
         Parallel.Invoke(getVariableRates);
-        Parallel.Invoke(getAverageRate);
+        Parallel.Invoke(getRateAverage);
     }
 
-    static void getFixedRates()
+    private void getFixedRates()
     {
         fixedFifteenYearsLoanRate = fixedFifteenYearsLoanRate + 0.1;
         fixedThirtyYearsLoanRate = fixedThirtyYearsLoanRate + 0.1;
     }
-    static void getVariableRates()
+    private void getVariableRates()
     {
         variableFifteenYearsLoanRate = variableFifteenYearsLoanRate + 0.1;
         variableThirthyYearsLoanRate = variableThirthyYearsLoanRate + 0.1;
         
     }
-    static void getAverageRate()
+    private void getRateAverage()
     {
         averageRate = averageRate + 0.1;
+        MortgageRequestor requestor = new MortgageRequestor(){Firstname = "Ilias", Lastname = "Jennane", DateOfBirth = DateTime.Now};
+        InvokeService(requestor);
+    }
+    
+    private void InvokeService( MortgageRequestor requestor)
+    {
+        
+        
+        
+        _httpClient.DefaultRequestHeaders.Accept.Clear();
+        _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json")); 
+        var jsonSerializerOptions = new JsonSerializerOptions();
+        jsonSerializerOptions.PropertyNameCaseInsensitive = true;
+        var requestAsJson = new StringContent(JsonSerializer.Serialize(requestor, jsonSerializerOptions),
+                                                Encoding.UTF8,
+                                                "application/json");
+
+        var httpResponse = _httpClient.PostAsync("https://iliasjmortgageappapim.azure-api.net/fixedrate/v1/1.0/Mortgage", requestAsJson).Result;
+        httpResponse.EnsureSuccessStatusCode();   
+        averageRateMessage = httpResponse.Content.ToString();
     }
 }

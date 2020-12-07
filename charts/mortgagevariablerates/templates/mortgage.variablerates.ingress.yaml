@@ -1,12 +1,16 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: variablemortgage-ingress
+  annotations:
+    #certmanager.k8s.io/acme-challenge-type: http01
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+  name: {{ .Release.Name }}-{{ .Chart.Name }}-ingress
 spec:
   tls:
   - hosts:
     - variablerates.mortgage.iliasjennane.com
-    secretName: letsencrypt
+    secretName: fixedratesapi-letsencrypt-prod
   rules:
   - host: variablerates.mortgage.iliasjennane.com
     http:

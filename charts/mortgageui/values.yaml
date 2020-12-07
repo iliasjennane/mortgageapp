@@ -1,4 +1,4 @@
 replicaCount: 1
 image:
   repository: "iliasjmortgageappcr.azurecr.io/mortgageui"
-  tag: "latest"
+  tag: "1.0"

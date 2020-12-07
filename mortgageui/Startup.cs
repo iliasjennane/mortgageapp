@@ -26,6 +26,15 @@ namespace mortgageui
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            Microsoft.ApplicationInsights.AspNetCore.Extensions.ApplicationInsightsServiceOptions aiOptions
+                = new Microsoft.ApplicationInsights.AspNetCore.Extensions.ApplicationInsightsServiceOptions();
+            // Enables adaptive sampling.
+            aiOptions.EnableAdaptiveSampling = true;
+            aiOptions.EnableDiagnosticsTelemetryModule = true;
+
+            // Enables QuickPulse (Live Metrics stream).
+            aiOptions.EnableQuickPulseMetricStream = true;
+            services.AddApplicationInsightsTelemetry(aiOptions);
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();

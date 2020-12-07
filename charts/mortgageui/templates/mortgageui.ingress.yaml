@@ -1,14 +1,18 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
+  annotations:
+    #certmanager.k8s.io/acme-challenge-type: http01
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: letsencrypt-prod
   name: {{ .Release.Name }}-{{ .Chart.Name }}-ingress
 spec:
   tls:
   - hosts:
-    - ui.mortgage.iliasjennane.com
-    secretName: letsencrypt
+    - mortgageui.iliasjennane.com
+    secretName: mortgageui-letsencrypt-prod
   rules:
-  - host: ui.mortgage.iliasjennane.com
+  - host: mortgageui.iliasjennane.com
     http:
       paths:
       - backend:

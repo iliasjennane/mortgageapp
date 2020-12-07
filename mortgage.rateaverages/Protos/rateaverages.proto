@@ -1,0 +1,23 @@
+syntax = "proto3";
+import "google/protobuf/timestamp.proto";
+option csharp_namespace = "mortgage.rateaverages";
+
+package rateaverages;
+
+// The greeting service definition.
+service RateAverage {
+  rpc GetAverageRate (RateAverageRequest) returns (RateAverageReply);
+}
+
+// The request message containing the user's name.
+message RateAverageRequest {
+  string firstname = 1;
+  string lastname = 2;
+  google.protobuf.Timestamp dateOfBirth = 3; 
+}
+
+// The response message containing the greetings.
+message RateAverageReply {
+  string riskLevel = 1;
+  double mortgageRate = 2; 
+}

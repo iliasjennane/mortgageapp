@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "O1gN7JDjvSevAhHa04P2qz8CRut8l+CEhWUORVK6EvyZwp9G3V39gf4rgavbS3HMRSGVjD3yrKOUfVKS9nzoaA==",
+  "dgSpecHash": "P+E/VavgwyHBeteGWr7bwcQ2a4U7So2i1W3b7TXVEZD7np4dg/26DYaExFryJiBgSCV3E7uIYNCQANuWgurvLw==",
   "success": true,
   "projectFilePath": "C:\\Users\\iliasj\\repos\\MortgageApp\\mortgage.fixedrates\\mortgage.fixedrates.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\iliasj\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.0\\microsoft.aspnetcore.authentication.jwtbearer.5.0.0.nupkg.sha512",
     "C:\\Users\\iliasj\\.nuget\\packages\\microsoft.aspnetcore.authentication.openidconnect\\5.0.0\\microsoft.aspnetcore.authentication.openidconnect.5.0.0.nupkg.sha512",
+    "C:\\Users\\iliasj\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\4.2.0\\microsoft.aspnetcore.mvc.versioning.4.2.0.nupkg.sha512",
     "C:\\Users\\iliasj\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
     "C:\\Users\\iliasj\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",
     "C:\\Users\\iliasj\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.7.1\\microsoft.identitymodel.jsonwebtokens.6.7.1.nupkg.sha512",

@@ -9,6 +9,7 @@ C:\Users\iliasj\repos\MortgageApp\mortgage.fixedrates\bin\Debug\net5.0\ref\mortg
 C:\Users\iliasj\repos\MortgageApp\mortgage.fixedrates\bin\Debug\net5.0\mortgage.fixedrates.pdb
 C:\Users\iliasj\repos\MortgageApp\mortgage.fixedrates\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\iliasj\repos\MortgageApp\mortgage.fixedrates\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
+C:\Users\iliasj\repos\MortgageApp\mortgage.fixedrates\bin\Debug\net5.0\Microsoft.AspNetCore.Mvc.Versioning.dll
 C:\Users\iliasj\repos\MortgageApp\mortgage.fixedrates\bin\Debug\net5.0\Microsoft.IdentityModel.JsonWebTokens.dll
 C:\Users\iliasj\repos\MortgageApp\mortgage.fixedrates\bin\Debug\net5.0\Microsoft.IdentityModel.Logging.dll
 C:\Users\iliasj\repos\MortgageApp\mortgage.fixedrates\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
