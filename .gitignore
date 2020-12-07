@@ -365,3 +365,16 @@ FodyWeavers.xsd
 mortgage.fixedrates/obj/Debug/net5.0/mortgage.fixedrates.csprojAssemblyReference.cache
 mortgageui/bin/*
 mortgageui/obj/*
+mortgage.fixedrates/obj/Debug/net5.0/mortgage.fixedrates.csprojAssemblyReference.cache
+mortgageui/obj/Debug/net5.0/mortgageui.AssemblyInfo.cs
+mortgageui/obj/Debug/net5.0/mortgageui.csproj.FileListAbsolute.txt
+mortgageui/obj/Debug/net5.0/mortgageui.RazorAssemblyInfo.cs
+mortgageui/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs
+mortgageui/obj/Debug/net5.0/RazorDeclaration/App.razor.g.cs
+mortgageui/obj/Debug/net5.0/RazorDeclaration/Pages/Counter.razor.g.cs
+mortgageui/obj/Debug/net5.0/RazorDeclaration/Pages/FetchData.razor.g.cs
+mortgageui/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs
+mortgageui/obj/Debug/net5.0/RazorDeclaration/Pages/MortageRates.razor.g.cs
+mortgageui/obj/Debug/net5.0/RazorDeclaration/Shared/MainLayout.razor.g.cs
+mortgageui/obj/Debug/net5.0/RazorDeclaration/Shared/NavMenu.razor.g.cs
+mortgageui/obj/Debug/net5.0/RazorDeclaration/Shared/SurveyPrompt.razor.g.cs
