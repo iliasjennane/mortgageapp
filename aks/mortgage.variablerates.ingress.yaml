@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: variablemortgage-ingress
+spec:
+  tls:
+  - hosts:
+    - variablerates.mortgage.iliasjennane.com
+    secretName: letsencrypt
+  rules:
+  - host: variablerates.mortgage.iliasjennane.com
+    http:
+      paths:
+      - backend:
+          serviceName: mortgagevariablerates
+          servicePort: 80
