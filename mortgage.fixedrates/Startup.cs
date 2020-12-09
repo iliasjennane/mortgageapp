@@ -28,20 +28,42 @@ namespace mortgage.fixedrates
         {
 
             services.AddControllers();
+            services.AddApiVersioning(
+                options => {
+                    options.AssumeDefaultVersionWhenUnspecified = true;
+                    options.ReportApiVersions = true;
+                    options.DefaultApiVersion = new ApiVersion(1,0);
+                }
+            );
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "mortgage.fixedrates", Version = "v1" });
+                c.ResolveConflictingActions(
+                    descriptions => {
+                        return descriptions.First();
+                    }
+                );
+                c.SwaggerDoc("1.0", new OpenApiInfo { Title = "Fixed rates mortgage API", Version = "1.0" });
+                c.SwaggerDoc("2.0", new OpenApiInfo { Title = "Fixed rates mortgage API", Version = "2.0" });
+                c.OperationFilter<RemoveVersionFromParameter>();
+                c.DocumentFilter<ReplaceVersionWithExactValueInPath>();
             });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseDeveloperExceptionPage();
+            app.UseSwagger();
+               
+            app.UseSwaggerUI(c => {
+                c.RoutePrefix = string.Empty;
+                c.SwaggerEndpoint("/swagger/1.0/swagger.json", "Fixed rates mortgage API 1.0");
+                c.SwaggerEndpoint("/swagger/2.0/swagger.json", "Fixed rates mortgage API 2.0");
+                //c.RoutePrefix = string.Empty;
+            });
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
-                app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "mortgage.fixedrates v1"));
+                
             }
 
             app.UseHttpsRedirection();

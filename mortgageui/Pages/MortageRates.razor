@@ -1,20 +1,28 @@
 @page "/mortagerates"
+@using System.Net.Http.Headers
+@using System.Text.Json
+@using System.Text
+@using mortgage.mortgageui.Models
+@inject Services.AverageRateApiService averageRateApiService
+
+
 <h1>Mortage Rates</h1>
 
 <p>Average Rate: @averageRate</p>
+<p>Average Rate: @averageRateMessage</p>
 
 <table>
     <tr>
         <td><label for="firstname">Firstname :</label></td>
-        <td><input type="text" id="firstname" name="firstname" required minlength="4" maxlength="50" size="10"> </td>
+        <td><input type="text" id="firstname" name="firstname" required minlength="4" maxlength="50" size="10" @bind="_firstname" @bind:event="oninput"> </td>
     </tr>
     <tr>
         <td><label for="lastname">Lastname :</label></td>
-        <td><input type="text" id="lastname" name="lastname" required minlength="4" maxlength="50" size="10"> </td>
+        <td><input type="text" id="lastname" name="lastname" required minlength="4" maxlength="50" size="10" @bind="_lastname" @bind:event="oninput"> </td>
     </tr>
     <tr>
         <td><label for="dateofbirth">Date of birth :</label></td>
-        <td><input type="date" id="dateofbirth" name="dateofbirth" required minlength="4" maxlength="50" size="10">
+        <td><input type="date" id="dateofbirth" name="dateofbirth" required minlength="4" maxlength="50" size="10" @bind="_dateOfBirth" @bind:event="oninput">
         </td>
     </tr>
 </table>
@@ -38,32 +46,51 @@
 
 
 @code {
-    private static double averageRate = 3.5;
-    private static double fixedFifteenYearsLoanRate = 3.0;
-    private static double fixedThirtyYearsLoanRate = 3.7;
-    private static double variableFifteenYearsLoanRate = 2.5;
-    private static double variableThirthyYearsLoanRate = 3.1;
+    
+    private string _firstname { get; set; }
+    private string _lastname { get; set; }
+    private DateTime _dateOfBirth { get; set; } = DateTime.Now;
+    
+    double averageRate = 3.5;
+    string averageRateMessage = "";
+    double fixedFifteenYearsLoanRate = 3.0;
+    double fixedThirtyYearsLoanRate = 3.7;
+    double variableFifteenYearsLoanRate = 2.5;
+    double variableThirthyYearsLoanRate = 3.1;
+
 
     private void GetRates()
     {
         Parallel.Invoke(getFixedRates);
         Parallel.Invoke(getVariableRates);
-        Parallel.Invoke(getAverageRate);
+        Parallel.Invoke(getRateAverage);
     }
 
-    static void getFixedRates()
+    private void getFixedRates()
     {
-        fixedFifteenYearsLoanRate = fixedFifteenYearsLoanRate + 0.1;
-        fixedThirtyYearsLoanRate = fixedThirtyYearsLoanRate + 0.1;
-    }
-    static void getVariableRates()
-    {
-        variableFifteenYearsLoanRate = variableFifteenYearsLoanRate + 0.1;
-        variableThirthyYearsLoanRate = variableThirthyYearsLoanRate + 0.1;
         
+        MortgageRequestor requestor = new MortgageRequestor(){Firstname = _firstname, Lastname = _lastname, DateOfBirth = _dateOfBirth};
+        var fixedRate =  averageRateApiService.GetMortgageFixedRate(requestor);
+        fixedFifteenYearsLoanRate = Math.Round(fixedRate.MortgageRate + 0.1, 2);
+        fixedThirtyYearsLoanRate = Math.Round(fixedRate.MortgageRate + 0.9, 2);
     }
-    static void getAverageRate()
+    private void getVariableRates()
     {
-        averageRate = averageRate + 0.1;
+        MortgageRequestor requestor = new MortgageRequestor(){Firstname = _firstname, Lastname = _lastname, DateOfBirth = _dateOfBirth};
+        var variableRate =  averageRateApiService.GetMortgageVariableRate(requestor);
+        variableFifteenYearsLoanRate = Math.Round(variableRate.MortgageRate + 0.1, 2);
+        variableThirthyYearsLoanRate = Math.Round(variableRate.MortgageRate + 0.9, 2);
+
     }
+    private void getRateAverage()
+    {
+        
+        MortgageRequestor requestor = new MortgageRequestor(){Firstname = _firstname, Lastname = _lastname, DateOfBirth = _dateOfBirth};
+        var averagemortgage =  averageRateApiService.GetMortgageFixedRate(requestor);
+
+        averageRate =    Math.Round(averagemortgage.MortgageRate, 2);
+        averageRateMessage = averagemortgage.RiskLevel;
+    }
+
+
 }

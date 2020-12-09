@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\iliasj\repos\MortgageApp\mortgageui\bin\Debug\net5.0\appsettings.Development.json
 C:\Users\iliasj\repos\MortgageApp\mortgageui\bin\Debug\net5.0\appsettings.json
 C:\Users\iliasj\repos\MortgageApp\mortgageui\bin\Debug\net5.0\mortgageui.StaticWebAssets.xml
@@ -58,3 +59,5 @@ C:\Users\iliasj\repos\MortgageApp\mortgageui\obj\Debug\net5.0\ref\mortgageui.dll
 C:\Users\iliasj\repos\MortgageApp\mortgageui\obj\Debug\net5.0\mortgageui.pdb
 C:\Users\iliasj\repos\MortgageApp\mortgageui\obj\Debug\net5.0\mortgageui.genruntimeconfig.cache
 C:\Users\iliasj\repos\MortgageApp\mortgageui\obj\Debug\net5.0\mortgageui.csproj.CopyComplete
+=======
+>>>>>>> p3_ApiManagement

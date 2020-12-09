@@ -26,9 +26,23 @@ namespace mortgageui
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            Microsoft.ApplicationInsights.AspNetCore.Extensions.ApplicationInsightsServiceOptions aiOptions
+                = new Microsoft.ApplicationInsights.AspNetCore.Extensions.ApplicationInsightsServiceOptions();
+            // Enables adaptive sampling.
+            aiOptions.EnableAdaptiveSampling = true;
+            aiOptions.EnableDiagnosticsTelemetryModule = true;
+
+            // Enables QuickPulse (Live Metrics stream).
+            aiOptions.EnableQuickPulseMetricStream = true;
+            services.AddApplicationInsightsTelemetry(aiOptions);
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
+            
+            services.AddHttpClient<Services.AverageRateApiService>(client =>
+            {
+                client.BaseAddress = new Uri("https://iliasjmortgageappapim.azure-api.net/");
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

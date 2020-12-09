@@ -360,6 +360,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+<<<<<<< HEAD
 */obj/*
 */bin/*
 mortgage.fixedrates/obj/Debug/net5.0/mortgage.fixedrates.csprojAssemblyReference.cache
@@ -371,6 +372,60 @@ mortgageui/obj/Debug/net5.0/mortgageui.csproj.FileListAbsolute.txt
 mortgageui/obj/Debug/net5.0/mortgageui.RazorAssemblyInfo.cs
 mortgageui/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs
 mortgageui/obj/Debug/net5.0/RazorDeclaration/App.razor.g.cs
+=======
+mortgage.fixedrates/bin/Debug/net5.0/mortgage.fixedrates.dll
+mortgage.fixedrates/bin/Debug/net5.0/mortgage.fixedrates.pdb
+mortgage.fixedrates/bin/Debug/net5.0/ref/mortgage.fixedrates.dll
+mortgage.fixedrates/obj/Debug/net5.0/mortgage.fixedrates.csprojAssemblyReference.cache
+mortgage.fixedrates/obj/Debug/net5.0/mortgage.fixedrates.dll
+mortgage.fixedrates/obj/Debug/net5.0/mortgage.fixedrates.pdb
+mortgage.fixedrates/obj/Debug/net5.0/ref/mortgage.fixedrates.dll
+mortgage.rateaverages/bin/Debug/net5.0/mortgage.rateaverages.deps.json
+mortgage.rateaverages/bin/Debug/net5.0/mortgage.rateaverages.dll
+mortgage.rateaverages/bin/Debug/net5.0/mortgage.rateaverages.exe
+mortgage.rateaverages/bin/Debug/net5.0/mortgage.rateaverages.pdb
+mortgage.rateaverages/bin/Debug/net5.0/ref/mortgage.rateaverages.dll
+mortgage.rateaverages/obj/mortgage.rateaverages.csproj.nuget.dgspec.json
+mortgage.rateaverages/obj/project.assets.json
+mortgage.rateaverages/obj/project.nuget.cache
+mortgage.rateaverages/obj/Debug/net5.0/12fbc7ffe642ca7e_rateaverages.protodep
+mortgage.rateaverages/obj/Debug/net5.0/apphost.exe
+mortgage.rateaverages/obj/Debug/net5.0/mortgage.rateaverages.assets.cache
+mortgage.rateaverages/obj/Debug/net5.0/mortgage.rateaverages.csproj.CoreCompileInputs.cache
+mortgage.rateaverages/obj/Debug/net5.0/mortgage.rateaverages.csproj.FileListAbsolute.txt
+mortgage.rateaverages/obj/Debug/net5.0/mortgage.rateaverages.csprojAssemblyReference.cache
+mortgage.rateaverages/obj/Debug/net5.0/mortgage.rateaverages.dll
+mortgage.rateaverages/obj/Debug/net5.0/mortgage.rateaverages.pdb
+mortgage.rateaverages/obj/Debug/net5.0/Protos/Rateaverages.cs
+mortgage.rateaverages/obj/Debug/net5.0/Protos/RateaveragesGrpc.cs
+mortgage.rateaverages/obj/Debug/net5.0/ref/mortgage.rateaverages.dll
+mortgage.variablerates/obj/Debug/net5.0/mortgage.variablerates.csprojAssemblyReference.cache
+mortgageui/bin/Debug/net5.0/mortgageui.deps.json
+mortgageui/bin/Debug/net5.0/mortgageui.dll
+mortgageui/bin/Debug/net5.0/mortgageui.exe
+mortgageui/bin/Debug/net5.0/mortgageui.pdb
+mortgageui/bin/Debug/net5.0/mortgageui.Views.dll
+mortgageui/bin/Debug/net5.0/mortgageui.Views.pdb
+mortgageui/bin/Debug/net5.0/ref/mortgageui.dll
+mortgageui/obj/mortgageui.csproj.nuget.dgspec.json
+mortgageui/obj/project.assets.json
+mortgageui/obj/project.nuget.cache
+mortgageui/obj/Debug/net5.0/apphost.exe
+mortgageui/obj/Debug/net5.0/mortgageui.AssemblyInfo.cs
+mortgageui/obj/Debug/net5.0/mortgageui.assets.cache
+mortgageui/obj/Debug/net5.0/mortgageui.csproj.CoreCompileInputs.cache
+mortgageui/obj/Debug/net5.0/mortgageui.csprojAssemblyReference.cache
+mortgageui/obj/Debug/net5.0/mortgageui.dll
+mortgageui/obj/Debug/net5.0/mortgageui.pdb
+mortgageui/obj/Debug/net5.0/mortgageui.RazorAssemblyInfo.cs
+mortgageui/obj/Debug/net5.0/mortgageui.Views.dll
+mortgageui/obj/Debug/net5.0/mortgageui.Views.pdb
+mortgageui/obj/Debug/net5.0/Razor/Pages/MortageRates.razor.g.cs
+mortgageui/obj/Debug/net5.0/RazorDeclaration/_Imports.razor.g.cs
+mortgageui/obj/Debug/net5.0/RazorDeclaration/App.razor.g.cs
+mortgageui/obj/Debug/net5.0/RazorDeclaration/mortgageui.dll
+mortgageui/obj/Debug/net5.0/RazorDeclaration/mortgageui.pdb
+>>>>>>> p3_ApiManagement
 mortgageui/obj/Debug/net5.0/RazorDeclaration/Pages/Counter.razor.g.cs
 mortgageui/obj/Debug/net5.0/RazorDeclaration/Pages/FetchData.razor.g.cs
 mortgageui/obj/Debug/net5.0/RazorDeclaration/Pages/Index.razor.g.cs
@@ -378,3 +433,7 @@ mortgageui/obj/Debug/net5.0/RazorDeclaration/Pages/MortageRates.razor.g.cs
 mortgageui/obj/Debug/net5.0/RazorDeclaration/Shared/MainLayout.razor.g.cs
 mortgageui/obj/Debug/net5.0/RazorDeclaration/Shared/NavMenu.razor.g.cs
 mortgageui/obj/Debug/net5.0/RazorDeclaration/Shared/SurveyPrompt.razor.g.cs
+<<<<<<< HEAD
+=======
+mortgageui/obj/Debug/net5.0/ref/mortgageui.dll
+>>>>>>> p3_ApiManagement

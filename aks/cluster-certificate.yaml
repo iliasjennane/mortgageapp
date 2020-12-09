@@ -1,0 +1,14 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: mortgageapp-certificate
+spec:
+  secretName: mortgageapp-tls-cert
+  duration: 24h
+  renewBefore: 12h
+  commonName: iliasjennane.com
+  dnsNames:
+  - iliasjennane.com
+  issuerRef:
+    name: letsencrypt
+    kind: ClusterIssuer

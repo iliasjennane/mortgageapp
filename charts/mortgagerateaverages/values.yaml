@@ -1,0 +1,4 @@
+replicaCount: 1
+image:
+  repository: "iliasjmortgageappcr.azurecr.io/mortgagerateaverages"
+  tag: "2.3"

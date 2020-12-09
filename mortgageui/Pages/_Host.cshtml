@@ -1,6 +1,7 @@
 ﻿@page "/"
 @namespace mortgageui.Pages
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
 @{
     Layout = null;
 }
@@ -15,6 +16,7 @@
     <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
     <link href="css/site.css" rel="stylesheet" />
     <link href="mortgageui.styles.css" rel="stylesheet" />
+    @Html.Raw(JavaScriptSnippet.FullScript)
 </head>
 <body>
     <component type="typeof(App)" render-mode="ServerPrerendered" />
