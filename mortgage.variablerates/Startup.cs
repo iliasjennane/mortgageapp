@@ -42,8 +42,8 @@ namespace mortgage.variablerates
                         return descriptions.First();
                     }
                 );
-                c.SwaggerDoc("1.0", new OpenApiInfo { Title = "Fixed rates mortgage API", Version = "1.0" });
-                c.SwaggerDoc("2.0", new OpenApiInfo { Title = "Fixed rates mortgage API", Version = "2.0" });
+                c.SwaggerDoc("1.0", new OpenApiInfo { Title = "Variable rates mortgage API", Version = "1.0" });
+                c.SwaggerDoc("2.0", new OpenApiInfo { Title = "Variable rates mortgage API", Version = "2.0" });
                 c.OperationFilter<RemoveVersionFromParameter>();
                 c.DocumentFilter<ReplaceVersionWithExactValueInPath>();
             });
@@ -57,8 +57,8 @@ namespace mortgage.variablerates
                
             app.UseSwaggerUI(c => {
                 c.RoutePrefix = string.Empty;
-                c.SwaggerEndpoint("/swagger/1.0/swagger.json", "Fixed rates mortgage API v1");
-                c.SwaggerEndpoint("/swagger/2.0/swagger.json", "Fixed rates mortgage API v2");
+                c.SwaggerEndpoint("/swagger/1.0/swagger.json", "Variable rates mortgage API 1.0");
+                c.SwaggerEndpoint("/swagger/2.0/swagger.json", "Variable rates mortgage API 2.0");
                 //c.RoutePrefix = string.Empty;
             });
             if (env.IsDevelopment())

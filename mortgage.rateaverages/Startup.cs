@@ -18,6 +18,14 @@ namespace mortgage.rateaverages
         {
             services.AddGrpc();
             services.AddGrpcReflection();
+            services.AddCors(o => o.AddPolicy("AllowAll", builder =>
+                {
+                    builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .WithExposedHeaders("Grpc-Status", "Grpc-Message", "Grpc-Encoding", "Grpc-Accept-Encoding");
+                }));
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -29,11 +37,13 @@ namespace mortgage.rateaverages
             }
 
             app.UseRouting();
+            app.UseGrpcWeb();
+            app.UseCors();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGrpcService<RateAverageSerice>();
-                endpoints.MapGrpcReflectionService();
+                endpoints.MapGrpcService<RateAverageSerice>().EnableGrpcWeb().RequireCors("AllowAll");;
+                endpoints.MapGrpcReflectionService().EnableGrpcWeb();
 
                 endpoints.MapGet("/", async context =>
                 {

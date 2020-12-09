@@ -1,4 +1,8 @@
+config:
+  apikey: 8d55bbed6fce477e8bf28578c570a673
+  apimtrace: true
 replicaCount: 1
 image:
   repository: "iliasjmortgageappcr.azurecr.io/mortgageui"
-  tag: "1.0"
+  tag: "2.2"
+  

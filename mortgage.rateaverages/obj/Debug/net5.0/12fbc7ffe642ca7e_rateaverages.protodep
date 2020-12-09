@@ -1,3 +1,0 @@
-obj\Debug\net5.0\Protos/Rateaverages.cs \
-obj\Debug\net5.0\Protos/RateaveragesGrpc.cs: C:/Users/iliasj/.nuget/packages/grpc.tools/2.32.0/build/native/include/google/protobuf/timestamp.proto\
- Protos/rateaverages.proto

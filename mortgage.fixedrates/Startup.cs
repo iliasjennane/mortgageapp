@@ -57,8 +57,8 @@ namespace mortgage.fixedrates
                
             app.UseSwaggerUI(c => {
                 c.RoutePrefix = string.Empty;
-                c.SwaggerEndpoint("/swagger/1.0/swagger.json", "Fixed rates mortgage API v1");
-                c.SwaggerEndpoint("/swagger/2.0/swagger.json", "Fixed rates mortgage API v2");
+                c.SwaggerEndpoint("/swagger/1.0/swagger.json", "Fixed rates mortgage API 1.0");
+                c.SwaggerEndpoint("/swagger/2.0/swagger.json", "Fixed rates mortgage API 2.0");
                 //c.RoutePrefix = string.Empty;
             });
             if (env.IsDevelopment())

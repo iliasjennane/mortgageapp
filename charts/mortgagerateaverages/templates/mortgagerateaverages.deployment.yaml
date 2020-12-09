@@ -21,14 +21,4 @@ spec:
             cpu: "500m"
         ports:
         - containerPort: 80
-        env:
-          - name: ocpApimSubscriptionKey
-            valueFrom:
-              configMapKeyRef:
-                key: ocpApimSubscriptionKey
-                name: {{ .Release.Name }}-{{ .Chart.Name }}-config
-          - name: ocpApimTrace
-            valueFrom:
-              configMapKeyRef:
-                key: ocpApimTrace
-                name: {{ .Release.Name }}-{{ .Chart.Name }}-config
+        - containerPort: 443

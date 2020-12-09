@@ -11,7 +11,7 @@ namespace mortgage.fixedrates.Controllers
     [ApiController]
     [ApiVersion("1.0")]
     [ApiVersion("2.0")]
-    [Route("{version:apiVersion}/[controller]")]
+    [Route("[controller]/{version:apiVersion}")]
     public class MortgageController : ControllerBase
     {
 
