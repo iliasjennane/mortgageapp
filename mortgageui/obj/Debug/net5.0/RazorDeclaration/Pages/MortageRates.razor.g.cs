@@ -13,71 +13,99 @@ namespace mortgageui.Pages
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Components;
 #nullable restore
-#line 1 "C:\Users\iliasj\repos\MortgageApp\mortgageui\_Imports.razor"
+#line 1 "c:\Users\iliasj\repos\MortgageApp\mortgageui\_Imports.razor"
 using System.Net.Http;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 2 "C:\Users\iliasj\repos\MortgageApp\mortgageui\_Imports.razor"
+#line 2 "c:\Users\iliasj\repos\MortgageApp\mortgageui\_Imports.razor"
 using Microsoft.AspNetCore.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 3 "C:\Users\iliasj\repos\MortgageApp\mortgageui\_Imports.razor"
+#line 3 "c:\Users\iliasj\repos\MortgageApp\mortgageui\_Imports.razor"
 using Microsoft.AspNetCore.Components.Authorization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 4 "C:\Users\iliasj\repos\MortgageApp\mortgageui\_Imports.razor"
+#line 4 "c:\Users\iliasj\repos\MortgageApp\mortgageui\_Imports.razor"
 using Microsoft.AspNetCore.Components.Forms;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 5 "C:\Users\iliasj\repos\MortgageApp\mortgageui\_Imports.razor"
+#line 5 "c:\Users\iliasj\repos\MortgageApp\mortgageui\_Imports.razor"
 using Microsoft.AspNetCore.Components.Routing;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 6 "C:\Users\iliasj\repos\MortgageApp\mortgageui\_Imports.razor"
+#line 6 "c:\Users\iliasj\repos\MortgageApp\mortgageui\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 7 "C:\Users\iliasj\repos\MortgageApp\mortgageui\_Imports.razor"
+#line 7 "c:\Users\iliasj\repos\MortgageApp\mortgageui\_Imports.razor"
 using Microsoft.AspNetCore.Components.Web.Virtualization;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 8 "C:\Users\iliasj\repos\MortgageApp\mortgageui\_Imports.razor"
+#line 8 "c:\Users\iliasj\repos\MortgageApp\mortgageui\_Imports.razor"
 using Microsoft.JSInterop;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 9 "C:\Users\iliasj\repos\MortgageApp\mortgageui\_Imports.razor"
+#line 9 "c:\Users\iliasj\repos\MortgageApp\mortgageui\_Imports.razor"
 using mortgageui;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
-#line 10 "C:\Users\iliasj\repos\MortgageApp\mortgageui\_Imports.razor"
+#line 10 "c:\Users\iliasj\repos\MortgageApp\mortgageui\_Imports.razor"
 using mortgageui.Shared;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 2 "c:\Users\iliasj\repos\MortgageApp\mortgageui\Pages\MortageRates.razor"
+using System.Net.Http.Headers;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 3 "c:\Users\iliasj\repos\MortgageApp\mortgageui\Pages\MortageRates.razor"
+using System.Text.Json;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "c:\Users\iliasj\repos\MortgageApp\mortgageui\Pages\MortageRates.razor"
+using System.Text;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 5 "c:\Users\iliasj\repos\MortgageApp\mortgageui\Pages\MortageRates.razor"
+using mortgage.mortgageui.Models;
 
 #line default
 #line hidden
@@ -91,40 +119,60 @@ using mortgageui.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 40 "C:\Users\iliasj\repos\MortgageApp\mortgageui\Pages\MortageRates.razor"
+#line 48 "c:\Users\iliasj\repos\MortgageApp\mortgageui\Pages\MortageRates.razor"
        
-    private static double averageRate = 3.5;
-    private static double fixedFifteenYearsLoanRate = 3.0;
-    private static double fixedThirtyYearsLoanRate = 3.7;
-    private static double variableFifteenYearsLoanRate = 2.5;
-    private static double variableThirthyYearsLoanRate = 3.1;
+    
+    private string _firstname { get; set; }
+    private string _lastname { get; set; }
+    private DateTime _dateOfBirth { get; set; } = DateTime.Now;
+    
+    double averageRate = 3.5;
+    string averageRateMessage = "";
+    double fixedFifteenYearsLoanRate = 3.0;
+    double fixedThirtyYearsLoanRate = 3.7;
+    double variableFifteenYearsLoanRate = 2.5;
+    double variableThirthyYearsLoanRate = 3.1;
+
 
     private void GetRates()
     {
         Parallel.Invoke(getFixedRates);
         Parallel.Invoke(getVariableRates);
-        Parallel.Invoke(getAverageRate);
+        Parallel.Invoke(getRateAverage);
     }
 
-    static void getFixedRates()
+    private void getFixedRates()
     {
-        fixedFifteenYearsLoanRate = fixedFifteenYearsLoanRate + 0.1;
-        fixedThirtyYearsLoanRate = fixedThirtyYearsLoanRate + 0.1;
-    }
-    static void getVariableRates()
-    {
-        variableFifteenYearsLoanRate = variableFifteenYearsLoanRate + 0.1;
-        variableThirthyYearsLoanRate = variableThirthyYearsLoanRate + 0.1;
         
+        MortgageRequestor requestor = new MortgageRequestor(){Firstname = _firstname, Lastname = _lastname, DateOfBirth = _dateOfBirth};
+        var fixedRate =  averageRateApiService.GetMortgageFixedRate(requestor);
+        fixedFifteenYearsLoanRate = Math.Round(fixedRate.MortgageRate + 0.1, 2);
+        fixedThirtyYearsLoanRate = Math.Round(fixedRate.MortgageRate + 0.9, 2);
     }
-    static void getAverageRate()
+    private void getVariableRates()
     {
-        averageRate = averageRate + 0.1;
+        MortgageRequestor requestor = new MortgageRequestor(){Firstname = _firstname, Lastname = _lastname, DateOfBirth = _dateOfBirth};
+        var variableRate =  averageRateApiService.GetMortgageVariableRate(requestor);
+        variableFifteenYearsLoanRate = Math.Round(variableRate.MortgageRate + 0.1, 2);
+        variableThirthyYearsLoanRate = Math.Round(variableRate.MortgageRate + 0.9, 2);
+
     }
+    private void getRateAverage()
+    {
+        
+        MortgageRequestor requestor = new MortgageRequestor(){Firstname = _firstname, Lastname = _lastname, DateOfBirth = _dateOfBirth};
+        var averagemortgage =  averageRateApiService.GetMortgageFixedRate(requestor);
+
+        averageRate =    Math.Round(averagemortgage.MortgageRate, 2);
+        averageRateMessage = averagemortgage.RiskLevel;
+    }
+
+
 
 #line default
 #line hidden
 #nullable disable
+        [global::Microsoft.AspNetCore.Components.InjectAttribute] private Services.AverageRateApiService averageRateApiService { get; set; }
     }
 }
 #pragma warning restore 1591
